@@ -101,6 +101,9 @@ USER root
 RUN $ORACLE_BASE/oraInventory/orainstRoot.sh && \
     $ORACLE_HOME/root.sh
 
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum install -y rlwrap
+
 USER oracle
 WORKDIR /home/oracle
 
